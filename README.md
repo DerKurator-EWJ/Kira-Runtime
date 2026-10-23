@@ -26,6 +26,7 @@ as one integrated, runnable system.
 | `unified-runtime-v0.9` | `modules/KIRA_UNIFIED_RUNTIME` | `KIRA_UNIFIED_RUNTIME_0_9.zip` |
 | `unified-runtime-v0.9.1` | `modules/KIRA_UNIFIED_RUNTIME` | `KIRA_UNIFIED_RUNTIME_0_9_1.zip` |
 | `unified-runtime-v0.9.2` | `modules/KIRA_UNIFIED_RUNTIME` | `KIRA_UNIFIED_RUNTIME_0_9_2.zip` |
+| `unified-runtime-v0.9.3` | `modules/KIRA_UNIFIED_RUNTIME` | `KIRA_UNIFIED_RUNTIME_0_9_3.zip` |
 
 ## Use
 
