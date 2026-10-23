@@ -1,5 +1,8 @@
-# Wird mit --database kira_uui.sqlite auch nach einem Neustart gespeichert.
-hier lern_draus("objekt_a", "farbe", "rot", "nutzer_aussage", "demo_06_e1", "external_claim", 3 / 4)
-hier was_weisst_du("objekt_a", "farbe")
-hier pruef_dich("objekt_a", "farbe")
-hier such_widerspruch()
+# Run once in a fresh --home; reruns are idempotent.
+hier(kira_event("node-thought", "node", "uui", "{\"name\":\"thought\",\"owner\":\"IQ\",\"state\":\"1\"}"))
+hier(kira_event("node-affect", "node", "uui", "{\"name\":\"affect\",\"owner\":\"EQ\",\"state\":\"1\"}"))
+hier(kira_event("tick-1", "tick", "uui", "{}"))
+hier(kira_event("tick-2", "tick", "uui", "{}"))
+hier(kira_link_count())
+hier(kira_node_value("thought"))
+hier(kira_event_count())

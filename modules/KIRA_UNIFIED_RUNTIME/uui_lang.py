@@ -129,8 +129,8 @@ class ReturnSignal(Exception):
     def __init__(self,value):self.value=value
 
 class Runtime:
-    def __init__(self,bridge,max_statements=1000,max_tokens=20000,max_steps=10000,max_call_depth=32):
-        self.bridge=bridge;self.vars={};self.output=[];self.functions={}
+    def __init__(self,bridge,max_statements=1000,max_tokens=20000,max_steps=10000,max_call_depth=32,host=None):
+        self.bridge=bridge;self.host=host;self.vars={};self.output=[];self.functions={}
         self.max_statements=max_statements;self.max_tokens=max_tokens;self.max_steps=max_steps
         self.max_call_depth=max_call_depth;self.steps=0;self.depth=0
         self.rrm_budget=ArithmeticBudget()
@@ -159,6 +159,10 @@ class Runtime:
             self.require_bool(value);return not value
         if kind=='call':
             name=node[1]
+            if name.startswith('kira_') and self.host is not None:
+                args=[self.evaluate(a,env) for a in node[2]]
+                try:return self.host.invoke_uui(name,args)
+                except (ValueError,TypeError,RuntimeError,KeyError,ZeroDivisionError) as e:raise UUIError(str(e)) from e
             if name in TRIAD_OPS:
                 args=[self.evaluate(a,env) for a in node[2]]
                 try:return invoke_triad(name,args,self)
@@ -231,7 +235,7 @@ class Runtime:
             elif op=='fn':
                 if inside_fn:raise UUIError('Nested function definitions unsupported')
                 name=statement[1]
-                if name in self.functions or name in COGNITIVE_OPS:raise UUIError(f'Function already declared or reserved: {name}')
+                if name in self.functions or name in COGNITIVE_OPS or name in TRIAD_OPS or name.startswith("kira_"):raise UUIError(f'Function already declared or reserved: {name}')
                 self.functions[name]=(statement[2],statement[3])
             elif op=='return':
                 if not inside_fn:raise UUIError('Return outside function')
