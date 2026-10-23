@@ -23,6 +23,7 @@ as one integrated, runnable system.
 | `rrm-triad-v0.8` | `modules/KIRA_RRM_TRIAD` | `KIRA_RRM_TRIAD_0_8.zip` |
 | `rrm-unified-v0.3` | `modules/KIRA_RRM_UNIFIED` | `KIRA_RRM_UNIFIED_0_3.zip` |
 | `rrm-uui-v0.4` | `modules/KIRA_RRM_UUI` | `KIRA_RRM_UUI_0_4.zip` |
+| `unified-runtime-v0.9` | `modules/KIRA_UNIFIED_RUNTIME` | `KIRA_UNIFIED_RUNTIME_0_9.zip` |
 
 ## Use
 

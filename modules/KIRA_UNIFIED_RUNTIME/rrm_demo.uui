@@ -1,0 +1,12 @@
+# RRM 0.4 demonstration
+es_sei x = rrm_exact("1.22")
+es_sei y = rrm_step(x, 2, 1)
+hier(y)
+es_sei z = rrm_append(x, 1, 3)
+hier(z)
+es_sei b = rrm_bound("1.22", "1.23")
+es_sei b2 = rrm_refine(b, "1.221", "1.222")
+hier(b2)
+es_sei p = rrm_state(x)
+so_nicht p = rrm_next(p, z)
+hier(rrm_current(p))
