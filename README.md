@@ -18,6 +18,7 @@ as one integrated, runnable system.
 | Tag | Module directory | Source archive |
 |---|---|---|
 | `rrm-triad-v0.5` | `modules/KIRA_RRM_TRIAD` | `KIRA_RRM_TRIAD_0_5.zip` |
+| `rrm-triad-v0.6` | `modules/KIRA_RRM_TRIAD` | `KIRA_RRM_TRIAD_0_6.zip` |
 
 ## Use
 
