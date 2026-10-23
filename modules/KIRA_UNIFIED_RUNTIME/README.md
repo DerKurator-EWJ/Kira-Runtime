@@ -1,6 +1,3 @@
-# UUI Core 1.0
+# KIRA Unified Runtime 0.9.2
 
-Details: [README_10.md](README_10.md). Frühere Versionshinweise in README_06–09.md.
-
-
-Siehe README_101.md für die Aliasnamen der Version 1.0.1.
+See `README_RUNTIME_092.md` for the persistent desktop API and prior `README_RUNTIME_091.md` for UUI persistence.

@@ -18,7 +18,7 @@ def canonical(value):
 class ExperienceStore:
     def __init__(self, path):
         self.path = str(Path(path))
-        self.db = sqlite3.connect(self.path)
+        self.db = sqlite3.connect(self.path, check_same_thread=False)
         self.db.execute('PRAGMA foreign_keys=ON')
         self.db.execute('PRAGMA busy_timeout=5000')
         self.db.executescript('''

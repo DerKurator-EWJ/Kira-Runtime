@@ -43,7 +43,7 @@ class BlockIndex:
 
 class NumericCore:
     def __init__(self, path=':memory:'):
-        self.db=sqlite3.connect(path)
+        self.db=sqlite3.connect(path, check_same_thread=False)
         self.db.execute('PRAGMA foreign_keys=ON')
         self.db.execute('CREATE TABLE IF NOT EXISTS numeric_items (id INTEGER PRIMARY KEY, numerator TEXT NOT NULL, denominator TEXT NOT NULL)')
         self.db.execute('CREATE TABLE IF NOT EXISTS numeric_evidence (item_id INTEGER NOT NULL REFERENCES numeric_items(id), source TEXT NOT NULL, numerator TEXT NOT NULL, denominator TEXT NOT NULL, count INTEGER NOT NULL DEFAULT 1, PRIMARY KEY(item_id,source,numerator,denominator))')
