@@ -1,0 +1,18 @@
+{
+  "source_id": "my-local-hf-teacher",
+  "source_version": "1",
+  "extraction_namespace": "my-hf-world-v1",
+  "seed_surfaces": ["Eule", "Falke", "Hund", "Wolf"],
+  "parent_probe_template": "{surface} ist ein",
+  "attribute_probes": [
+    {"relation_type": "property", "prompt_template": "{surface} hat"},
+    {"relation_type": "action", "prompt_template": "{surface} kann"}
+  ],
+  "stop_surfaces": ["Ding"],
+  "max_parent_depth": 8,
+  "top_k": 8,
+  "temperature": 1.0,
+  "min_probability": 0.25,
+  "evidence_confidence": 0.90,
+  "attributes_on_internal_concepts_only": true
+}

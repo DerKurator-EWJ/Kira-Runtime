@@ -1,0 +1,37 @@
+{
+  "android_version_code": 64,
+  "android_version_name": "0.7-unified-mind-oven",
+  "build_note": "No Android SDK/Gradle installation was available in the assembly environment; source-level Kotlin core tests and Forge runtime validation were executed instead.",
+  "checks": {
+    "apk_built_in_this_environment": false,
+    "blake2b_ids_match_python_reference": true,
+    "fabric_reference_mirror_outputs_match": true,
+    "fabric_reference_packet_id_matches": true,
+    "forest_wake_does_not_auto_propagate": true,
+    "forge_base_read_only_layer": true,
+    "forge_flat_kernel_digest_validated": true,
+    "hf_oven_wrapper_help": true,
+    "hf_oven_wrapper_py_compile": true,
+    "hypno_mind_projection_present": true,
+    "local_language_triples_persist_separately": true,
+    "mainactivity_no_parser_syntax_markers": true,
+    "new_kotlin_core_compiles_with_host_stubs": true,
+    "tree_synthesis_and_dissonance_coexist": true
+  },
+  "forge_reference_sample": {
+    "concept_shortcuts": 24,
+    "digest": "058c6bad41535628ff60ec522ba613a578e1e6b10a3888b3c7435f4110e155f3",
+    "facts": 24,
+    "routes": 15,
+    "teacher_queries": 16,
+    "teacher_removed_before_runtime": true
+  },
+  "language_android": "Equinox Language v0.3 semantics",
+  "reference_ids": {
+    "continuation_HOLD_INFINITY": 5161323618755204148,
+    "entity_Vogel": 5570551419175242379,
+    "fabric_packet_vogel": 8449144334707028938,
+    "operation_MIRROR": 2417519555463692908
+  },
+  "release": "Equinox v0.7 Unified Mind / External Oven"
+}

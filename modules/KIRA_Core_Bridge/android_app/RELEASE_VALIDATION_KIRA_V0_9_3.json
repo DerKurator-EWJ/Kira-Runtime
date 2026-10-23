@@ -1,0 +1,20 @@
+{
+  "version": "0.9.3-kira-universal-macro-compiler",
+  "versionCode": 95,
+  "checks": {
+    "mindCoreSelfTest": "PASS",
+    "indexedStoreV2SelfTest": "PASS",
+    "universalModalityClassifier": true,
+    "universalPromotionPolicy": true,
+    "autoPromotionUsesUniversalCompiler": true,
+    "manualConsolidationUsesUniversalCompiler": true,
+    "crossModalPromotionUsesUniversalCompiler": true,
+    "sparseMemberIndex": true,
+    "unifiedMemoryQuery": true,
+    "unifiedWorkingProjection": true,
+    "mindUsesUnifiedHierarchyView": true,
+    "textRecallUsesMacroStructure": true,
+    "persistentStoreFormatChanged": false
+  },
+  "androidFullBuild": "NOT_RUN_NO_ANDROID_SDK"
+}
