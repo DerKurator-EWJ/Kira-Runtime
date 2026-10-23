@@ -1,0 +1,8 @@
+es_sei t = triad_new()
+so_nicht t = triad_node(t, "thought", "IQ", rrm_exact("1"), rrm_exact("0"))
+so_nicht t = triad_node(t, "affect", "EQ", rrm_exact("1"), rrm_exact("0"))
+so_nicht t = triad_bound(t, "affect", rrm_exact("0.9"), rrm_exact("1.1"))
+so_nicht t = triad_tick(t)
+so_nicht t = triad_tick(t)
+hier(triad_links(t))
+hier(triad_value(t, "affect"))

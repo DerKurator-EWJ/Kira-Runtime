@@ -5,6 +5,7 @@ import json
 import re
 from uui_cognition import ALL as CORE_OPS, REVISION_OPS, RELATION_OPS, PATTERN_OPS, SENSOR_OPS, invoke as invoke_cognitive
 from uui_rrm import FUNCTIONS as RRM_OPS, invoke as invoke_rrm
+from uui_triad import FUNCTIONS as TRIAD_OPS, invoke as invoke_triad
 from rrm_arithmetic import Exact, Bound, Process, ArithmeticBudget
 COGNITIVE_OPS = set(CORE_OPS) | set(REVISION_OPS) | set(RELATION_OPS) | set(PATTERN_OPS) | set(SENSOR_OPS) | set(RRM_OPS)
 
@@ -158,6 +159,10 @@ class Runtime:
             self.require_bool(value);return not value
         if kind=='call':
             name=node[1]
+            if name in TRIAD_OPS:
+                args=[self.evaluate(a,env) for a in node[2]]
+                try:return invoke_triad(name,args,self)
+                except (ValueError,TypeError,RuntimeError,KeyError,ZeroDivisionError) as e:raise UUIError(str(e)) from e
             if name in RRM_OPS:
                 args=[self.evaluate(a,env) for a in node[2]]
                 try:return invoke_rrm(name,args,self)
