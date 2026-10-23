@@ -21,6 +21,7 @@ as one integrated, runnable system.
 | `rrm-triad-v0.6` | `modules/KIRA_RRM_TRIAD` | `KIRA_RRM_TRIAD_0_6.zip` |
 | `rrm-triad-v0.7` | `modules/KIRA_RRM_TRIAD` | `KIRA_RRM_TRIAD_0_7.zip` |
 | `rrm-triad-v0.8` | `modules/KIRA_RRM_TRIAD` | `KIRA_RRM_TRIAD_0_8.zip` |
+| `rrm-unified-v0.3` | `modules/KIRA_RRM_UNIFIED` | `KIRA_RRM_UNIFIED_0_3.zip` |
 
 ## Use
 
