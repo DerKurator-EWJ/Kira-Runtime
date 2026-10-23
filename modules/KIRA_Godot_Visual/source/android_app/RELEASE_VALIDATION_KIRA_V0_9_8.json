@@ -1,0 +1,16 @@
+{
+  "version": "0.9.8",
+  "versionCode": 100,
+  "checks": {
+    "MindCoreSelfTest": "OK",
+    "IndexedStoreV2SelfTest": "OK",
+    "BasePackageV1SelfTest": "OK",
+    "BaseRepositorySelfTest": "OK",
+    "python_py_compile": "OK"
+  },
+  "notes": [
+    "Full Android APK build not executed in this environment because Android SDK/Gradle are unavailable.",
+    "KiraBasePackage.kt and BaseKnowledgeRepository.kt were syntax/type checked with host stubs.",
+    "Sample Forge Intermediate was compiled to .kirabase and SHA-256 verified."
+  ]
+}

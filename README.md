@@ -29,6 +29,7 @@ as one integrated, runnable system.
 | `unified-runtime-v0.9.3` | `modules/KIRA_UNIFIED_RUNTIME` | `KIRA_UNIFIED_RUNTIME_0_9_3.zip` |
 | `core-bridge-v1.5.0` | `modules/KIRA_Core_Bridge` | `KIRA_Core_Bridge_1_5_0.zip` |
 | `desktop-v1.6.0` | `modules/KIRA_Desktop` | `KIRA_Desktop_1_6_0_Starter.zip` |
+| `godot-visual-v1.7.0` | `modules/KIRA_Godot_Visual` | `KIRA_Godot_Visual_1_7_0.zip` |
 
 ## Use
 

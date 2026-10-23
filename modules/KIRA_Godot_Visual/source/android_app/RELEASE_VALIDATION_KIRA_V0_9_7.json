@@ -1,0 +1,16 @@
+{
+  "release": "Kira v0.9.7",
+  "versionCode": 99,
+  "versionName": "0.9.7-kira-forge-intermediate-v1",
+  "checks": {
+    "mindCoreSelfTest": "OK",
+    "indexedStoreV2SelfTest": "OK",
+    "forgeIntermediateExample": "OK",
+    "forgeIntermediateJsonHostSyntax": "OK",
+    "pythonCompile": "OK",
+    "androidFullBuild": "NOT_AVAILABLE_NO_ANDROID_SDK"
+  },
+  "persistenceSchemaChanged": false,
+  "baseInstallChanged": false,
+  "preferredExternalContract": "kira-forge-intermediate-v1"
+}

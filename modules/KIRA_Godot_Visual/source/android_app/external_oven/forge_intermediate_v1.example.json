@@ -1,0 +1,41 @@
+{
+  "format": "kira-forge-intermediate-v1",
+  "schemaVersion": 1,
+  "package": {
+    "id": "de-basic-demo",
+    "version": 1,
+    "namespace": "kira.de.basic.demo"
+  },
+  "source": {
+    "id": "demo-teacher",
+    "version": "1",
+    "adapterId": "demo-text-adapter",
+    "adapterVersion": "1",
+    "modality": "text",
+    "modelFamily": "demo",
+    "revision": "local",
+    "license": "demo-only",
+    "fingerprint": ""
+  },
+  "atoms": [
+    {"id":"a:vogel","modality":"text","kind":"CONCEPT","canonical":"Vogel","confidence":0.98,"support":12},
+    {"id":"a:tier","modality":"text","kind":"CONCEPT","canonical":"Tier","confidence":0.99,"support":15},
+    {"id":"a:fliegen","modality":"text","kind":"FEATURE","canonical":"fliegen","confidence":0.94,"support":9}
+  ],
+  "vectors": [],
+  "relations": [
+    {"from":"a:vogel","to":"a:tier","kind":"is_a","strength":0.94,"confidence":0.95,"polarity":"SUPPORT","direction":"DIRECTED","evidenceType":"explicit"},
+    {"from":"a:vogel","to":"a:fliegen","kind":"association","strength":0.82,"confidence":0.88,"polarity":"NEUTRAL","direction":"DIRECTED","evidenceType":"embedding_similarity"}
+  ],
+  "sequences": [
+    {"id":"s:vogel-fliegen","modality":"text","members":["a:vogel","a:fliegen"],"confidence":0.9,"support":9}
+  ],
+  "macroCandidates": [
+    {"id":"m:f-vogel","modality":"text","members":["a:vogel","a:fliegen"],"support":12,"coherence":0.91,"recurrence":0.84,"confidence":0.92},
+    {"id":"m:f-taxonomy","modality":"text","members":["a:vogel","a:tier"],"support":11,"coherence":0.90,"recurrence":0.80,"confidence":0.91},
+    {"id":"m:e-vogel","modality":"text","members":["m:f-vogel","m:f-taxonomy"],"support":10,"coherence":0.88,"recurrence":0.78,"confidence":0.9}
+  ],
+  "traits": [
+    {"ownerId":"a:vogel","key":"animate","number":1.0,"confidence":0.9}
+  ]
+}

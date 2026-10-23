@@ -1,0 +1,26 @@
+{
+  "release": "Equinox v0.7.1 Matrix Chat / Local Learning Surface",
+  "android_version_code": 65,
+  "android_version_name": "0.7.1-matrix-chat",
+  "build_note": "No Android SDK/Gradle installation was available in the assembly environment; pure Kotlin host tests, source delimiter validation and external oven Python checks were executed instead.",
+  "checks": {
+    "apk_built_in_this_environment": false,
+    "chat_main_dock_entry_present": true,
+    "chat_bottom_composer_present": true,
+    "chat_history_persistent": true,
+    "chat_matrix_clean_raw_modes_present": true,
+    "chat_display_mode_persistent": true,
+    "display_mode_does_not_change_learning_state": true,
+    "chat_unknown_input_is_explicitly_unstable": true,
+    "chat_repetition_detection_tested": true,
+    "chat_associative_overlap_tested": true,
+    "chat_base_surface_hit_tested": true,
+    "chat_numeric_role_surface_token_next_triples_tested": true,
+    "chat_projects_to_mind_working_state": true,
+    "forest_wake_does_not_auto_propagate": true,
+    "fabric_reference_packet_id_matches": true,
+    "fabric_reference_mirror_outputs_match": true,
+    "hf_oven_wrapper_py_compile": true,
+    "mainactivity_delimiters_balanced": true
+  }
+}
