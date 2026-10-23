@@ -1,0 +1,17 @@
+{
+  "release": "Kira v0.8.2",
+  "checks": {
+    "host_mind_core_test": "PASS",
+    "media_picker_present": true,
+    "image_video_background_layer": true,
+    "real_image_local_refraction": true,
+    "video_lens_overlay": true,
+    "single_layered_stage": true,
+    "glass_chat_surfaces": true,
+    "persistent_matrix_lanes": true,
+    "matrix_activity_gated": true,
+    "now_gate_transparent": true,
+    "audio_output_in_output_menu": true
+  },
+  "android_build": "NOT_RUN_NO_ANDROID_SDK_OR_GRADLE_WRAPPER_IN_ENVIRONMENT"
+}

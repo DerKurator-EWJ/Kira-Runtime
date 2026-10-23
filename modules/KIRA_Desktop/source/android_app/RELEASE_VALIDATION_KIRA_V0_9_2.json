@@ -1,0 +1,17 @@
+{
+  "version": "0.9.2-kira-unified-memory-core",
+  "versionCode": 93,
+  "checks": {
+    "mindCoreSelfTest": "PASS",
+    "indexedStoreV2SelfTest": "PASS",
+    "candidatePersistence": true,
+    "streamStatePersistence": true,
+    "crossModalCandidatePersistence": true,
+    "mindTriplesUnifiedStore": true,
+    "textRecallIndependentOfChatHistory": true,
+    "legacyMindMigration": true,
+    "legacyChatMigration": true,
+    "defaultProductLearning": true
+  },
+  "androidFullBuild": "NOT_RUN_NO_ANDROID_SDK"
+}

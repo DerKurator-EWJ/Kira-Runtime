@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kira-forge-intermediate-v1",
+  "title": "Kira Forge Intermediate v1",
+  "type": "object",
+  "required": ["format", "schemaVersion", "package", "source"],
+  "properties": {
+    "format": {"const": "kira-forge-intermediate-v1"},
+    "schemaVersion": {"const": 1},
+    "package": {
+      "type":"object","required":["id","version","namespace"],"additionalProperties":false,
+      "properties":{"id":{"type":"string","minLength":1},"version":{"type":"integer","minimum":1},"namespace":{"type":"string","minLength":1}}
+    },
+    "source": {
+      "type":"object","required":["id","version","adapterId","adapterVersion","modality"],"additionalProperties":false,
+      "properties":{
+        "id":{"type":"string","minLength":1},"version":{"type":"string"},"adapterId":{"type":"string","minLength":1},
+        "adapterVersion":{"type":"string","minLength":1},"modality":{"type":"string","minLength":1},"modelFamily":{"type":"string"},
+        "revision":{"type":"string"},"license":{"type":"string"},"fingerprint":{"type":"string"}
+      }
+    },
+    "atoms": {"type":"array","maxItems":500000,"items":{"$ref":"#/$defs/atom"}},
+    "vectors": {"type":"array","maxItems":250000,"items":{"$ref":"#/$defs/vector"}},
+    "relations": {"type":"array","maxItems":2000000,"items":{"$ref":"#/$defs/relation"}},
+    "sequences": {"type":"array","maxItems":250000,"items":{"$ref":"#/$defs/sequence"}},
+    "macroCandidates": {"type":"array","maxItems":250000,"items":{"$ref":"#/$defs/macro"}},
+    "traits": {"type":"array","maxItems":2000000,"items":{"$ref":"#/$defs/trait"}}
+  },
+  "$defs": {
+    "confidence":{"type":"number","minimum":0,"maximum":1},
+    "members":{"type":"array","maxItems":256,"items":{"type":"string","minLength":1}},
+    "atom":{"type":"object","required":["id","modality","kind","canonical"],"properties":{
+      "id":{"type":"string","minLength":1},"modality":{"type":"string","minLength":1},"kind":{"enum":["CONCEPT","FEATURE","EVENT","TRAIT","SYMBOL","STATE","OTHER"]},
+      "canonical":{"type":"string","minLength":1},"stableKey":{"type":"string"},"confidence":{"$ref":"#/$defs/confidence"},"support":{"type":"integer","minimum":1},"sourceKey":{"type":"string"}
+    }},
+    "vector":{"type":"object","required":["id","ownerId","space","values"],"properties":{
+      "id":{"type":"string","minLength":1},"ownerId":{"type":"string","minLength":1},"space":{"type":"string","minLength":1},
+      "values":{"type":"array","minItems":1,"maxItems":4096,"items":{"type":"number"}}
+    }},
+    "relation":{"type":"object","required":["from","to","kind","strength"],"properties":{
+      "from":{"type":"string","minLength":1},"to":{"type":"string","minLength":1},"kind":{"type":"string","minLength":1},
+      "strength":{"type":"number","minimum":0,"maximum":1},"confidence":{"$ref":"#/$defs/confidence"},
+      "polarity":{"enum":["SUPPORT","OPPOSE","NEUTRAL"]},"direction":{"enum":["DIRECTED","BIDIRECTIONAL"]},
+      "evidenceType":{"type":"string"},"sourceKey":{"type":"string"}
+    }},
+    "sequence":{"type":"object","required":["id","modality","members"],"properties":{
+      "id":{"type":"string","minLength":1},"modality":{"type":"string","minLength":1},"members":{"$ref":"#/$defs/members"},
+      "stableKey":{"type":"string"},"confidence":{"$ref":"#/$defs/confidence"},"support":{"type":"integer","minimum":1},"sourceKey":{"type":"string"}
+    }},
+    "macro":{"type":"object","required":["id","modality","members","support"],"properties":{
+      "id":{"type":"string","minLength":1},"modality":{"type":"string","minLength":1},"members":{"$ref":"#/$defs/members"},"stableKey":{"type":"string"},
+      "support":{"type":"integer","minimum":1},"coherence":{"$ref":"#/$defs/confidence"},"recurrence":{"$ref":"#/$defs/confidence"},
+      "confidence":{"$ref":"#/$defs/confidence"},"sourceKey":{"type":"string"}
+    }},
+    "trait":{"type":"object","required":["ownerId","key"],"properties":{
+      "ownerId":{"type":"string","minLength":1},"key":{"type":"string","minLength":1},"number":{"type":"number"},"text":{"type":"string"},
+      "confidence":{"$ref":"#/$defs/confidence"},"sourceKey":{"type":"string"}
+    },"oneOf":[{"required":["number"]},{"required":["text"]}]}
+  }
+}
